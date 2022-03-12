@@ -13,15 +13,8 @@ const gun = Gun({ web: server });
 const user = gun.user();
 
 const signup = (username, password) => {
+    // Create user account
     user.create(username, password, (account) => {
         console.log("user has been created", username, account)
     })
 }
-
-const login = (username, password) => {
-    user.auth(username, password, (account) => {
-        console.log("user has been logged in", username, account)
-    })
-}
-
-signup("alice", "password");
