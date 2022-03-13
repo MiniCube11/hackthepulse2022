@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PercentBar from './PercentBar';
 
 const GovernmentHome = ({ hospitals }) => {
     return (
         <div>
+            <h2>Hospitals</h2>
             {Object.keys(hospitals).map(hospitalId => 
                     <div key={hospitalId}>
-                        <h2>{hospitals[hospitalId]} - {hospitalId}</h2>
+                    <PercentBar label={`${hospitalId} - 40%`} percent={40} />
                     </div>
                 )}
         </div>
