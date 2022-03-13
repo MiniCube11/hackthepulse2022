@@ -9,8 +9,6 @@ const Navbar = () => {
     const navigate = useNavigate();
     const [loggedIn, setLoggedIn] = useState(user.is);
     
-    console.log(user)
-
     const logout = () => {
         user.leave();
         setLoggedIn(false);

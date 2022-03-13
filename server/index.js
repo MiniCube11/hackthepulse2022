@@ -15,7 +15,6 @@ const user = gun.user();
 const signup = (username, password, data) => {
     // Create user account
     user.create(username, password, (account) => {
-        console.log(account.pub)
         gun.get("account").get(account.pub).put(data);
 
         // if (data.isHospital) {

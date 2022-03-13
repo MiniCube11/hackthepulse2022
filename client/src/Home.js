@@ -32,7 +32,6 @@ const Home = () => {
                     setHospitalData(hospital);
                     setResources({});
                     gun.get('hospital').get(accountData.hospitalId).map().on((resource, key) => {
-                        console.log(key, resource, resources, "ASDF")
                         setResources(prev => ({ ...prev, [key]: resource }));
                     });
                 }
@@ -43,7 +42,6 @@ const Home = () => {
                     setAllHospitals(data);
                     setHospitals({});
                     gun.get('hospital').map().once((data, hospitalId) => {
-                        console.log({ name: "Hospital Name", id: hospitalId });
                         setHospitals(prev => ({ ...prev, [hospitalId]: "Hospital Name" }));
                     });
                 }
@@ -51,7 +49,6 @@ const Home = () => {
         }
     }
 
-    console.log(hospitals, resources)
     return (
         <Page>
             {accountData.isHospital &&
