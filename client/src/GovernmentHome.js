@@ -3,8 +3,11 @@ import styled from 'styled-components';
 import PercentBar from './PercentBar';
 
 const data = {
-    stmaryshospital: {name: "Poké Center Hospital", percent: 45},
+    pokecenterhospital: {name: "Poké Center Hospital", percent: 45},
     grandriverhospital: {name: "Grand River Hospital", percent: 72},
+    lunarcrishospital: {name: "Lunar Cris Hospital", percent: 88},
+    stmaryshospital: {name: "St. Mary's Hospital", percent: 60},
+    heronhospital: {name: "Heron Hospital", percent: 33},
 }
 
 const GovernmentHome = ({ hospitals }) => {
