@@ -8,11 +8,11 @@ Prices are rising, hospitals are running out of supplies. Frustration ensues as 
 
 Since then, it’s been two years-- and the system still isn’t any better. So, what could we do?
 
-Enter Hospichain.
+Enter HospiChain.
 
 ## What it does
 
-**Hospichain** informs the government of any lack of supplies a hospital in their zone of care encounters. It shows them the urgency of this supply, so they can have a priority list while considering demands. Using blockchain technology, **Hospichain** allows information to get from hospitals to the government faster and simpler, informing each other of their needs.
+**HospiChain** informs the government of any lack of supplies a hospital in their zone of care encounters. It shows them the urgency of this supply, so they can have a priority list while considering demands. Using blockchain technology, **HospiChain** allows information to get from hospitals to the government faster and simpler, informing each other of their needs.
 
 ## How we built it
 
