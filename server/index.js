@@ -18,17 +18,28 @@ const signup = (username, password, data) => {
         console.log(account.pub)
         gun.get("account").get(account.pub).put(data);
 
-        if (data.isHospital) {
-            gun.get('hospital').put(data.hospitalId).put({ "Masks": { "used": 0, "total": 0, "demand": 0 } });
-        }
+        // if (data.isHospital) {
+        //     gun.get('hospital').get(data.hospitalId).put({ "Masks": { "used": 0, "total": 0, "demand": 0 } });
+        // }
                 
     })
 }
 
 const data = {
-    name: "Ontario Government",
-    isGovernment: true,
-    isHospital: false,
+    name: "Ada Murry",
+    isGovernment: false,
+    isHospital: true,
+    hospitalId: "grandriverhospital",
+    hospitalName: "Grand River Hospital"
 }
 
+const addfake = () => {
+    signup("adamurry112", "password", data);
+    gun.get('hospital').get("grandriverhospital").put({ "Masks": { "used": 675, "total": 1000, "demand": 0 } });
+    gun.get('hospital').get("grandriverhospital").put({ "First aid kits": { "used": 89, "total": 100, "demand": 0 } });
+    gun.get('hospital').get("grandriverhospital").put({ "Gloves": { "used": 999, "total": 1000, "demand": 0 } });
+    gun.get('hospital').get("grandriverhospital").put({ "Surgical supplies": { "used": 392, "total": 1000, "demand": 0 } });
+}
+
+// addfake();
 // signup("ontgov", "password", data)

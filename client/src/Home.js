@@ -18,37 +18,40 @@ const Home = () => {
     useEffect(() => {
         if (!user.is) {
             navigate('/login');
-        } 
+        }
     });
 
-    gun.get(`account/${pubKey}`).on((account) => {
-        if (account !== accountData) setAccountData(account);
-    })
-
-    if (accountData.isHospital) {
-        gun.get(`hospital/${accountData.hospitalId}`).on((hospital) => {
-            if (hospital !== hospitalData) {
-                setHospitalData(hospital);
-                setResources({});
-                gun.get('hospital').get(accountData.hospitalId).map().on((resource, key) => {
-                    setResources({ ...resources, [key]: resource });
-                });
-            }
+    if (user.is) {
+        gun.get(`account/${pubKey}`).on((account) => {
+            if (account !== accountData) setAccountData(account);
         });
-    } else {
-        gun.get('hospital').on((data) => {
-            if (allHospitals !== data) {
-                setAllHospitals(data);
-                setHospitals({});
-                gun.get('hospital').map().once((data, hospitalId) => {
-                    console.log({ name: "Hospital Name", id: hospitalId });
-                    setHospitals({ ...hospitals, [hospitalId]: "Hospital Name" });
-                });
-            }
-        })
+    
+        if (accountData.isHospital) {
+            gun.get(`hospital/${accountData.hospitalId}`).on((hospital) => {
+                if (hospital !== hospitalData) {
+                    setHospitalData(hospital);
+                    setResources({});
+                    gun.get('hospital').get(accountData.hospitalId).map().on((resource, key) => {
+                        console.log(key, resource, resources, "ASDF")
+                        setResources(prev => ({ ...prev, [key]: resource }));
+                    });
+                }
+            });
+        } else {
+            gun.get('hospital').on((data) => {
+                if (allHospitals !== data) {
+                    setAllHospitals(data);
+                    setHospitals({});
+                    gun.get('hospital').map().once((data, hospitalId) => {
+                        console.log({ name: "Hospital Name", id: hospitalId });
+                        setHospitals(prev => ({ ...prev, [hospitalId]: "Hospital Name" }));
+                    });
+                }
+            });
+        }
     }
 
-    console.log(hospitals)
+    console.log(hospitals, resources)
     return (
         <Page>
             {accountData.isHospital &&

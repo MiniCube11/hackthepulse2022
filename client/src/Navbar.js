@@ -23,7 +23,7 @@ const Navbar = () => {
 
     return (
         <Container>
-            <h2>HospiTracker</h2>
+            <h2>HospiChain</h2>
             <UserInfo>
                 {loggedIn ?
                     <>

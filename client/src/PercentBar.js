@@ -12,7 +12,7 @@ const PercentBar = ({ percent, label }) => {
 };
 
 const Container = styled.div`
-    margin-top: 50px;
+    margin-top: 35px;
     position: relative;
     background-color: yellow;
     display: flex;
