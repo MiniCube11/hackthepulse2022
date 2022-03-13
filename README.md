@@ -1,5 +1,7 @@
 # HospiChain
 
+## Inspiration
+
 Pretend it’s 2020 again.
 
 Prices are rising, hospitals are running out of supplies. Frustration ensues as covid cases broke out, danger heighted by the lack of resources to help. There was no single clear line of communication between hospital and government, and even then, data often got misput and lost.
@@ -10,7 +12,7 @@ Enter Hospichain.
 
 ## What it does
 
-**Hospichain** informs the government of any lack of supplies a hospital in their zone of care encounters. It shows them the urgency of this supply, so they can have a priority list while considering demands. **Hospichain** allows information to get from hospitals to the government fast and simpler, informing each other of their needs.
+**Hospichain** informs the government of any lack of supplies a hospital in their zone of care encounters. It shows them the urgency of this supply, so they can have a priority list while considering demands. Using blockchain technology, **Hospichain** allows information to get from hospitals to the government faster and simpler, informing each other of their needs.
 
 ## How we built it
 
