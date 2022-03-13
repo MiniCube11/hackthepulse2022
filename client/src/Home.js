@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
 
 import { gun, user } from './database';
 import HospitalHome from './HospitalHome';
@@ -49,13 +50,17 @@ const Home = () => {
 
     console.log(hospitals)
     return (
-        <div>
+        <Page>
             {accountData.isHospital &&
                 <HospitalHome name={accountData.hospitalName} resources={resources} />}
             {accountData.isGovernment &&
                 <GovernmentHome hospitals={hospitals} />}
-        </div>
+        </Page>
     )
 };
+
+const Page = styled.div`
+    padding: 60px 60px;
+`
 
 export default Home;

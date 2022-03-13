@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
 
 import { user } from './database';
 
@@ -25,12 +26,40 @@ const Login = () => {
     });
 
     return (
-        <div>
-            <input type="text" placeholder="username" value={username}  onChange={(e) => setUsername(e.target.value)}/>
-            <input type="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-            <button onClick={() => login(username, password)}>Log In</button>
-        </div>
+        <Page>
+            <Form>
+                <Input type="text" placeholder="username" value={username}  onChange={(e) => setUsername(e.target.value)}/>
+                <Input type="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                <LogInButton onClick={() => login(username, password)}>Log In</LogInButton>
+            </Form>
+        </Page>
     )
 };
+
+const Page = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+`
+
+const Form = styled.div`
+    width: 500px;
+
+`
+
+const Input = styled.input`
+    padding: 7px 12px;
+    font-size: 1em;
+    width: 472px;
+    margin-bottom: 20px;
+`
+
+const LogInButton = styled.button`
+    padding: 7px 12px;
+    font-size: 1em;
+    width: 500px;
+    margin-top: 10px;
+`
 
 export default Login;
